@@ -1,0 +1,12 @@
+node_modules
+dist
+.git
+.github
+.planning
+.claude
+.idea
+.DS_Store
+*.md
+tandarr-config.json
+tandarr-library-cache.json
+tandarr-library-cache.json.tmp

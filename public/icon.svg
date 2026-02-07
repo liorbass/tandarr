@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Main flame gradient - purple to gold -->
+    <linearGradient id="flameGrad" x1="0.5" y1="1" x2="0.5" y2="0">
+      <stop offset="0%" stop-color="#7B2FBE"/>
+      <stop offset="35%" stop-color="#9B4DCA"/>
+      <stop offset="65%" stop-color="#D4A03C"/>
+      <stop offset="100%" stop-color="#F5C842"/>
+    </linearGradient>
+    <!-- Inner flame gradient -->
+    <linearGradient id="innerFlameGrad" x1="0.5" y1="1" x2="0.5" y2="0">
+      <stop offset="0%" stop-color="#5B1F9E"/>
+      <stop offset="40%" stop-color="#7B2FBE"/>
+      <stop offset="100%" stop-color="#D4A03C"/>
+    </linearGradient>
+    <!-- Film reel accent gradient -->
+    <linearGradient id="reelGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5C842"/>
+      <stop offset="100%" stop-color="#D4A03C"/>
+    </linearGradient>
+    <!-- Glow filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <!-- Subtle outer glow -->
+    <filter id="outerGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feFlood flood-color="#D4A03C" flood-opacity="0.3"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+
+  <!-- Main flame shape -->
+  <g filter="url(#outerGlow)">
+    <!-- Outer flame -->
+    <path d="
+      M 256 52
+      C 256 52, 340 140, 360 200
+      C 380 260, 390 290, 388 330
+      C 386 370, 370 410, 340 435
+      C 310 460, 280 472, 256 475
+      C 232 472, 202 460, 172 435
+      C 142 410, 126 370, 124 330
+      C 122 290, 132 260, 152 200
+      C 172 140, 256 52, 256 52
+      Z
+    " fill="url(#flameGrad)" opacity="0.95"/>
+
+    <!-- Middle flame layer -->
+    <path d="
+      M 256 120
+      C 256 120, 320 190, 338 240
+      C 356 290, 358 320, 354 350
+      C 350 380, 335 405, 310 422
+      C 285 439, 270 445, 256 446
+      C 242 445, 227 439, 202 422
+      C 177 405, 162 380, 158 350
+      C 154 320, 156 290, 174 240
+      C 192 190, 256 120, 256 120
+      Z
+    " fill="url(#innerFlameGrad)" opacity="0.85"/>
+
+    <!-- Inner bright core -->
+    <path d="
+      M 256 220
+      C 256 220, 300 270, 310 305
+      C 320 340, 318 365, 306 385
+      C 294 405, 276 418, 256 420
+      C 236 418, 218 405, 206 385
+      C 194 365, 192 340, 202 305
+      C 212 270, 256 220, 256 220
+      Z
+    " fill="#F5C842" opacity="0.6"/>
+
+    <!-- Film strip holes (left side of flame) -->
+    <rect x="148" y="280" width="14" height="14" rx="3" fill="#1a1a2e" opacity="0.7"/>
+    <rect x="148" y="310" width="14" height="14" rx="3" fill="#1a1a2e" opacity="0.7"/>
+    <rect x="148" y="340" width="14" height="14" rx="3" fill="#1a1a2e" opacity="0.7"/>
+    <rect x="148" y="370" width="14" height="14" rx="3" fill="#1a1a2e" opacity="0.6"/>
+
+    <!-- Film strip holes (right side of flame) -->
+    <rect x="350" y="280" width="14" height="14" rx="3" fill="#1a1a2e" opacity="0.7"/>
+    <rect x="350" y="310" width="14" height="14" rx="3" fill="#1a1a2e" opacity="0.7"/>
+    <rect x="350" y="340" width="14" height="14" rx="3" fill="#1a1a2e" opacity="0.7"/>
+    <rect x="350" y="370" width="14" height="14" rx="3" fill="#1a1a2e" opacity="0.6"/>
+
+    <!-- Play button triangle in the flame core -->
+    <path d="
+      M 240 320
+      L 240 370
+      L 280 345
+      Z
+    " fill="#F5C842" opacity="0.8" filter="url(#glow)"/>
+  </g>
+</svg>

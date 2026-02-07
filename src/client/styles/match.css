@@ -1,0 +1,267 @@
+/* Match Popup Overlay */
+.match-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: matchFadeIn 0.2s ease-out;
+}
+
+.match-popup {
+  background: var(--color-surface);
+  border-radius: 16px;
+  max-width: 360px;
+  width: calc(100% - 48px);
+  padding: 32px 24px 24px;
+  text-align: center;
+  animation: matchPopIn 0.2s ease-out;
+}
+
+.match-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin: 0 0 16px;
+}
+
+.match-poster {
+  width: 240px;
+  max-width: 100%;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+.match-movie-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 16px 0 4px;
+}
+
+.match-movie-genres {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin: 0 0 20px;
+}
+
+/* Action Buttons */
+.match-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.match-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s ease;
+}
+
+.match-btn:active {
+  opacity: 0.8;
+}
+
+.match-btn-regret {
+  background: var(--color-surface-hover);
+  color: var(--color-text-muted);
+}
+
+.match-btn-select {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* Entrance Animations */
+@keyframes matchFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes matchPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Vote Progress (below swipe progress in CardStack) */
+.vote-progress {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin: 2px 0 0;
+}
+
+/* Result Screen */
+.result-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.result-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin: 0 0 16px;
+}
+
+.result-poster {
+  width: 280px;
+  max-width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+.result-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 16px 0 4px;
+}
+
+.result-meta {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.result-summary {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin: 12px 0 0;
+  line-height: 1.5;
+}
+
+.result-selected-by {
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  margin: 8px 0 0;
+  font-style: italic;
+}
+
+.result-back-btn {
+  margin-top: 24px;
+  padding: 12px 32px;
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.result-back-btn:active {
+  opacity: 0.8;
+}
+
+/* Near-miss Results */
+.near-miss-heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 4px;
+}
+
+.near-miss-subtitle {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin: 0 0 16px;
+}
+
+.near-miss-empty {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin: 16px 0;
+}
+
+.near-miss-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.near-miss-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 8px;
+}
+
+.near-miss-rank {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  min-width: 28px;
+}
+
+.near-miss-poster {
+  width: 60px;
+  border-radius: 4px;
+}
+
+.near-miss-info {
+  flex: 1;
+  text-align: left;
+}
+
+.near-miss-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.near-miss-year {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.near-miss-agreement {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+/* Tablet and desktop: scale up match popup and results */
+@media (min-width: 768px) {
+  .match-popup {
+    max-width: 420px;
+  }
+  .result-screen {
+    max-width: 500px;
+  }
+  .result-poster {
+    width: 320px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .result-screen {
+    max-width: 560px;
+  }
+}
