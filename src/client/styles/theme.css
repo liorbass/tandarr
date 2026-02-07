@@ -1,0 +1,37 @@
+/* Breakpoints (mobile-first, min-width):
+   sm: 480px, md: 768px, lg: 1024px, xl: 1280px */
+
+:root {
+  --color-bg: #1a1a2e;
+  --color-surface: #242438;
+  --color-surface-hover: #2e2e48;
+  --color-text: #eaeaea;
+  --color-text-muted: #8e8ea0;
+  --color-accent: #e5a00d;
+  --color-accent-hover: #f0b429;
+  --color-error: #ef4444;
+  --color-success: #22c55e;
+  --color-border: #333350;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius: 8px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
