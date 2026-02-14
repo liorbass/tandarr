@@ -20,7 +20,7 @@
   </Overview>
   <Category>MediaApp:Other</Category>
   <WebUI>http://[IP]:[PORT:3000]/</WebUI>
-  <Icon>https://raw.githubusercontent.com/liorbass/tandarr-unraid-templates/main/tandarr/tandarr-icon.png</Icon>
+  <Icon>https://raw.githubusercontent.com/liorbass/tandarr/refs/heads/main/public/icon.svg</Icon>
   <ExtraParams>--restart unless-stopped</ExtraParams>
   <Requires>A configured Plex Media Server accessible on your network.</Requires>
 
