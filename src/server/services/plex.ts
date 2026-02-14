@@ -104,13 +104,14 @@ export async function getMovieCount(
   }
 
   const data = await res.json();
-  const totalSize = data.MediaContainer?.totalSize;
+  const container = data.MediaContainer;
+  const totalSize = container?.totalSize ?? container?.size;
 
-  if (totalSize !== undefined) {
+  if (totalSize != null) {
     return totalSize;
   }
 
-  // Fallback: try with Container-Size=1 and read totalSize
+  // Fallback: try with Container-Size=1 and read totalSize/size
   const fallbackRes = await fetch(
     `${serverUrl}/library/sections/${sectionKey}/all?X-Plex-Container-Size=1`,
     {
@@ -126,7 +127,8 @@ export async function getMovieCount(
   }
 
   const fallbackData = await fallbackRes.json();
-  return fallbackData.MediaContainer?.totalSize ?? 0;
+  const fb = fallbackData.MediaContainer;
+  return fb?.totalSize ?? fb?.size ?? 0;
 }
 
 interface PlexMovieRaw {
